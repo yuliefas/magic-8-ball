@@ -40,13 +40,37 @@ class _BallState extends State<Ball> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: FlatButton(
-        onPressed: () {
-          setState(() {
-            setupBallNumber();
-          });
-        },
-        child: Image.asset('images/ball$ballNumber.png'),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CircleAvatar(
+            backgroundImage: AssetImage('images/pixlr.jpg'),
+            radius: 50.0,
+          ),
+          Text(
+            'Yuliefas',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Pacifico',
+              fontSize: 40.0,
+            ),
+          ),
+          SizedBox(
+            width: 150.0,
+            height: 20.0,
+            child: Divider(
+              color: Colors.white,
+            ),
+          ),
+          FlatButton(
+            onPressed: () {
+              setState(() {
+                setupBallNumber();
+              });
+            },
+            child: Image.asset('images/ball$ballNumber.png'),
+          ),
+        ],
       ),
     );
   }
